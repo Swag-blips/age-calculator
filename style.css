@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f0f0f0;
+  --neutral: #ffffff;
+  --border-color: #dcdcdc;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main-content {
+  width: 343px;
+  border-radius: 24px 24px 100px 24px;
+  background-color: var(--neutral);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+input {
+  outline: none;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+}
+
+.fields {
+  display: flex;
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
