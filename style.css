@@ -13,11 +13,12 @@
   --border-color: #dcdcdc;
   --label: #716f6f;
   --neutralB: #151515;
+  --error: #ff5959;
 }
 
 body {
   background-color: var(--bg);
-  font-family: "Poppins";
+  font-family: "Poppins", "sans-serif";
 }
 
 main {
@@ -64,6 +65,13 @@ input {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.error {
+  font-size: 14px ;
+  font-style: italic ;
+  text-align: left ;
+  color: var(--error);
 }
 
 label {
@@ -117,7 +125,7 @@ img {
   gap: 9px;
 
   h2 {
-    font-size: 56px;
+    font-size: 48px;
     color: var(--primary);
     line-height: 100%;
     letter-spacing: -2%;

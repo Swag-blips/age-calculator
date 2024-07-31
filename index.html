@@ -29,20 +29,40 @@
           <div class="fields">
             <div class="field">
               <label for="Day">Day</label>
-              <input type="number" name="Day" id="Day" placeholder="DD" />
+              <input
+                type="number"
+                name="Day"
+                id="Day"
+                placeholder="DD"
+                id="Day"
+              />
+              <p class="error" id="error"></p>
             </div>
             <div class="field">
               <label for="Month">Month</label>
-              <input type="number" name="Month" id="Month" placeholder="MM" />
+              <input
+                type="number"
+                name="Month"
+                id="Month"
+                placeholder="MM"
+                id="Month"
+              />
             </div>
             <div class="field">
               <label for="Year">Year</label>
-              <input type="number" name="Year" id="Year" placeholder="YY" />
+              <input
+                type="number"
+                name="Year"
+                id="Year"
+                placeholder="YY"
+                id="Year"
+              />
+              <p class="error" id="error"></p>
             </div>
           </div>
           <div class="submission">
             <hr />
-            <button>
+            <button id="submit-button">
               <img src="./assets/images/icon-arrow.svg" alt="submit" />
             </button>
             <hr />
@@ -51,19 +71,20 @@
 
         <div class="results">
           <div class="result">
-            <h2>38</h2>
+            <h2 id="years-value">--</h2>
             <p>years</p>
           </div>
           <div class="result">
-            <h2>3</h2>
+            <h2 id="months-value">--</h2>
             <p>months</p>
           </div>
           <div class="result">
-            <h2>26</h2>
+            <h2 id="days-value">--</h2>
             <p>days</p>
           </div>
         </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
