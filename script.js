@@ -1,4 +1,4 @@
-"use strict";
+
 
 let yearInput = document.getElementById("Year");
 let monthInput = document.getElementById("Month");
