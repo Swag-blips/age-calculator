@@ -49,7 +49,7 @@ input {
   border-radius: 8px;
   width: 87px;
   font-family: "Poppins";
-  font-size: 16spx;
+  font-size: 16px;
   font-weight: bold;
   color: var(--neutralB);
   opacity: 50%;
@@ -68,9 +68,9 @@ input {
 }
 
 .error {
-  font-size: 14px ;
-  font-style: italic ;
-  text-align: left ;
+  font-size: 12px;
+  font-style: italic;
+  text-align: left;
   color: var(--error);
 }
 

@@ -10,9 +10,11 @@ let daysValue = document.getElementById("days-value");
 let dayError = document.getElementById("day-error");
 let monthError = document.getElementById("month-error");
 let yearError = document.getElementById("year-error");
-let label1 = document.getElementById("label-1");
-let label2 = document.getElementById("label-2");
-let label3 = document.getElementById("label-3");
+let dayLabel = document.getElementById("day-label");
+let monthLabel = document.getElementById("month-label");
+let yearLabel = document.getElementById("year-label");
+
+console.log(yearInput, monthInput, dayInput);
 
 document.addEventListener("DOMContentLoaded", () => {
   let age = {};
@@ -27,9 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let yearInputValue = parseInt(yearInput.value.trim());
     let dayInputValue = parseInt(dayInput.value.trim());
     let dob = new Date(
-      yearInput.value.trim(),
-      monthInput.value.trim(),
-      dayInput.value.trim()
+      yearInputValue,
+      monthInputValue - 1, // Fix month indexing
+      dayInputValue
     );
 
     console.log(monthInputValue);
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentDate = new Date();
     let currentYear = currentDate.getFullYear();
 
-    if (dayInputValue === "") {
+    if (!dayInputValue) {
       error.day = "This field is required";
       isValid = false;
     } else if (dayInputValue > 31 || dayInputValue <= 0) {
@@ -48,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       error.day = "";
     }
-    if (monthInputValue === "") {
+
+    if (!monthInputValue) {
       error.month = "This field is required";
       isValid = false;
     } else if (monthInputValue > 12 || monthInputValue <= 0) {
@@ -57,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       error.month = "";
     }
-    if (yearInputValue === "") {
+
+    if (!yearInputValue) {
       error.year = "This field is required";
       isValid = false;
     } else if (yearInputValue > currentYear || yearInputValue < 1500) {
@@ -65,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       error.year = "Must be in the past or correct";
     } else if (dob > currentDate) {
       isValid = false;
-      error.day = "must be a valid date";
+      error.day = "Must be a valid date";
     } else {
       error.year = "";
     }
@@ -77,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       monthInputValue === 11
     ) {
       if (dayInputValue >= 31) {
-        error.day = "must be a valid date";
+        error.day = "Must be a valid date";
         isValid = false;
       }
     }
@@ -89,9 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
     yearError.innerHTML = "";
     monthError.innerHTML = "";
     dayError.innerHTML = "";
-    label1.style.color = "#716F6F";
-    label2.style.color = "#716F6F";
-    label3.style.color = "#716F6F";
+    dayLabel.style.color = "#716F6F";
+    monthLabel.style.color = "#716F6F";
+    yearLabel.style.color = "#716F6F";
     dayInput.style.border = "1px solid #DCDCDC";
     monthInput.style.border = "1px solid #DCDCDC";
     yearInput.style.border = "1px solid #DCDCDC";
@@ -101,9 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
     dayError.innerHTML = error.day;
     monthError.innerHTML = error.month;
     yearError.innerHTML = error.year;
-    label1.style.color = "#FF5959";
-    label2.style.color = "#FF5959";
-    label3.style.color = "#FF5959";
+    dayLabel.style.color = "#FF5959";
+    monthLabel.style.color = "#FF5959";
+    yearLabel.style.color = "#FF5959";
     dayInput.style.border = "1px solid #FF5959";
     monthInput.style.border = "1px solid #FF5959";
     yearInput.style.border = "1px solid #FF5959";
@@ -112,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let ageCalculation = () => {
     let dob = new Date(
       yearInput.value.trim(),
-      monthInput.value.trim(),
+      monthInput.value.trim() - 1, // Fix month indexing
       dayInput.value.trim()
     );
 
@@ -127,13 +131,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentDay = currentDate.getDate();
 
-    //get year
+    // Get year
     let yearAge = currentYear - dobYear;
 
     if (yearAge <= 0) {
     }
 
-    // get months
+    // Get months
     let monthAge;
     if (currentMonth > dobMonth) {
       monthAge = currentMonth - dobMonth;
@@ -142,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       monthAge = 12 + currentMonth - dobMonth;
     }
 
-    // get days
+    // Get days
     let dayAge;
     if (currentDay >= dobDay) {
       dayAge = currentDay - dobDay;

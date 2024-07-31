@@ -28,7 +28,7 @@
         <form>
           <div class="fields">
             <div class="field">
-              <label for="Day">Day</label>
+              <label for="Day" id="day-label">Day</label>
               <input
                 type="number"
                 name="Day"
@@ -36,10 +36,10 @@
                 placeholder="DD"
                 id="Day"
               />
-              <p class="error" id="error"></p>
+              <p class="error" id="day-error"></p>
             </div>
             <div class="field">
-              <label for="Month">Month</label>
+              <label for="Month" id="month-label">Month</label>
               <input
                 type="number"
                 name="Month"
@@ -47,9 +47,10 @@
                 placeholder="MM"
                 id="Month"
               />
+              <p class="error" id="month-error"></p>
             </div>
             <div class="field">
-              <label for="Year">Year</label>
+              <label for="Year" id="year-label">Year</label>
               <input
                 type="number"
                 name="Year"
@@ -57,7 +58,7 @@
                 placeholder="YY"
                 id="Year"
               />
-              <p class="error" id="error"></p>
+              <p class="error" id="year-error"></p>
             </div>
           </div>
           <div class="submission">
